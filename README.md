@@ -37,7 +37,7 @@ Open:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 pytest
 ```
 
@@ -46,6 +46,7 @@ pytest
 - Backend containerization
 - Docker Compose service wiring
 - App, database, cache, and reverse proxy separation
-- Basic health checks
-- CI pipeline for tests
+- Liveness (`/health`) and readiness (`/ready`) checks, both covered by tests
+- Non-root runtime image without test dependencies
+- CI pipeline for tests and a Docker image smoke test
 
